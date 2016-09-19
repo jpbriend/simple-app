@@ -13,7 +13,7 @@ node('maven') {
 
 // Custom step
 def withMaven(def body) {
-    def javaHome = tool name: 'oracle-8u77', type: 'hudson.model.JDK'
+    def mavenHome = tool name: 'maven-3.3.9', type: 'hudson.tasks.Maven$MavenInstallation'
 
     withEnv(["PATH+MAVEN=${mavenHome}/bin"]) {
         body.call()
